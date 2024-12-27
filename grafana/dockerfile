@@ -1,0 +1,6 @@
+# Using the graphana enterprise image
+FROM grafana/grafana-enterprise
+# Install the Druid plugin 
+RUN grafana-cli plugins install grafadruid-druid-datasource
+# Expose Grafana's default port 
+EXPOSE 3000
