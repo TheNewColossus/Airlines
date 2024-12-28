@@ -1,4 +1,7 @@
 #!/bin/sh
 export WORK_DIR=$(pwd);
-sudo docker buildx build -t grafana/grafana-enterprise ${WORK_DIR}/grafana/
-docker-compose up -d
+
+# Grafan needs permission to write data to the directory
+sudo chmod -R 777 ${WORK_DIR}/grafana/storage
+ 
+sudo docker compose up -d

@@ -60,7 +60,9 @@ services:
 
   grafana:
     container_name: grafana
-    image: grafana/grafana-enterprise-plugins:latest
+    image: grafana/grafana-enterprise
+    environment:
+      - GF_INSTALL_PLUGINS=grafadruid-druid-datasource
     ports:
       - "3000:3000"
     volumes:
