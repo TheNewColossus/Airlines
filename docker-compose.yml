@@ -5,42 +5,42 @@ volumes:
     driver_opts: 
       type: none 
       o: bind 
-      device: ${AIRLINES}/postgres 
+      device: ${metadata_data_folder} 
   middle_var: 
     driver_opts: 
       type: none 
       o: bind 
-      device: ${AIRLINES}/druid/middle 
+      device: ${middle_var_folder} 
   historical_var: 
     driver_opts: 
       type: none 
       o: bind 
-      device: ${AIRLINES}/druid/historical 
+      device: ${historical_var_folder}
   broker_var: 
     driver_opts: 
       type: none 
       o: bind 
-      device: ${AIRLINES}/druid/broker 
+      device: ${broker_var_folder} 
   coordinator_var: 
     driver_opts: 
       type: none 
       o: bind 
-      device: ${AIRLINES}/druid/coordinator 
+      device: ${coordinator_var_folder} 
   router_var: 
     driver_opts: 
       type: none 
       o: bind 
-      device: ${AIRLINES}/druid/router 
+      device: ${router_var_folder} 
   druid_shared: 
     driver_opts: 
       type: none 
       o: bind 
-      device: ${AIRLINES}/druid 
+      device: ${druid_shared_folder} 
   grafana_storage: 
     driver_opts:
       type: none 
       o: bind
-      device: ${AIRLINES}/grafana/storage
+      device: ${grafana_storage_folder}
 
 
 services:
