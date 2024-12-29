@@ -6,7 +6,7 @@ if grep -Fxq "WORKDIR=$WORK_DIR" ${WORK_DIR}/.env
 then
     echo 
 else
-    sed -i "1iWORKDIR=$WORK_DIR" ${WORK_DIR}/.env
+    sed -i "2iWORKDIR=$WORK_DIR" ${WORK_DIR}/.env
 
     # Grafana needs permission to write data to the directory
     sudo chmod -R 777 ${WORK_DIR}/grafana/storage
