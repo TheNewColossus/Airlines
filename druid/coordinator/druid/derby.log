@@ -1,7 +1,7 @@
-Sat Dec 28 12:04:35 UTC 2024 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Sun Dec 29 11:36:46 UTC 2024 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Sat Dec 28 12:04:52 UTC 2024:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0194-0d27-5b8c-0003a1c4f230 
+Sun Dec 29 11:36:47 UTC 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0194-1234-5353-0003a1fb1c08 
 on database directory /opt/druid/var/druid/metadata.db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5ffd2b27 
 Loaded from file:/opt/druid/lib/derby-10.14.2.0.jar
 java.vendor=Debian
