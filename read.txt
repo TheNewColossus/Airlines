@@ -1,1 +1,2 @@
 kindly wait patiently as druid takes some time to boot all its services
+add a functionlaity to create postgres folder auto
