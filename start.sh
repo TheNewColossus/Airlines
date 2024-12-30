@@ -7,7 +7,8 @@ then
     echo 
 else
     sed -i "2iWORKDIR=$WORK_DIR" ${WORK_DIR}/.env
-
+    # Postgres directory must be created right at the time the program first boots
+    sudo mkdir -p ${WORK_DIR}/postgres
     # Grafana needs permission to write data to the directory
     sudo chmod -R 777 ${WORK_DIR}/grafana/storage
     sudo chmod -R 777 ${WORK_DIR}/druid
