@@ -4,7 +4,7 @@ This **Data Enginnering Project** grabs data from an airlines api, stores it in 
 Get all the data related to your favourite flights at the click of a **button**.
 
 ## Table of Contents
-### <ul> <li> [Architecture Diagram](#architecure-diagram) </ul>
+### <ul> <li> [Architecture Diagram](#architecture-diagram) </ul>
 ### <ul> <li> [How it Works?]() </ul>
 
 #### Architecture Diagram
