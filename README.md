@@ -42,4 +42,4 @@ Shell scripts are wrappers for `docker-compose` which works as a managing tool i
 Do note that all the data will remain in the respective directories even after removing the compose cluster. This design decision is deliberate as persistent storage is favoured in almost every organizational setting.
 
 ### Contact
-Feel free to reach out to me regarding this project. Thanks!!! <ins>Aayushh Dutta</ins>
+Feel free to reach out to me regarding this project. Thanks!!!  <ins>Aayushh Dutta</ins>
