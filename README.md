@@ -22,7 +22,7 @@ Software required to run the project. Install:
 - [docker-compose](https://docs.docker.com/compose/install/)
 
 ### Running Project
-Shell scripts are a wrapper for `docker-compose` which work as a managing tool.
+Shell scripts are wrappers for `docker-compose` which works as a managing tool in this project.
 
 - Build project infrastructure
 ```
