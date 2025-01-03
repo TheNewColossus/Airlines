@@ -8,6 +8,7 @@ Get all the data related to your favourite flights at the click of a **button**.
 ### <ul> <li> [How it Works?](#how-it-works) </ul>
 ### <ul> <li> [Prerequisites](#prerequisites) </ul>
 ### <ul> <li> [Running Project](#running-project) </ul>
+### <ul> <li> [Contact](#contact) </ul>
 
 ### Architecture Diagram
 ![](./images/Screenshot%20From%202025-01-02%2017-04-35.png)
@@ -39,3 +40,6 @@ Shell scripts are wrappers for `docker-compose` which works as a managing tool i
 ./delete.sh
 ```
 Do note that all the data will remain in the respective directories even after removing the compose cluster. This design decision is deliberate as persistent storage is favoured in almost every organizational setting.
+
+### Contact
+Feel free to reach out to me regarding this project. Thanks!!! <ins>Aayushh Dutta</ins>
