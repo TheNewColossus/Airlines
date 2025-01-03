@@ -7,6 +7,7 @@ Get all the data related to your favourite flights at the click of a **button**.
 ### <ul> <li> [Architecture Diagram](#architecture-diagram) </ul>
 ### <ul> <li> [How it Works?](#how-it-works) </ul>
 ### <ul> <li> [Prerequisites](#prerequisites) </ul>
+### <ul> <li> [Running Project](#running-project) </ul>
 
 ### Architecture Diagram
 ![](./images/Screenshot%20From%202025-01-02%2017-04-35.png)
@@ -19,3 +20,22 @@ Software required to run the project. Install:
 - [Docker](https://docs.docker.com/get-docker/) - You must allocate a minimum of 8 GB of Docker memory resource.
 - [Python 3.10+ (pip)](https://www.python.org/)
 - [docker-compose](https://docs.docker.com/compose/install/)
+
+### Running Project
+Shell scripts are a wrapper for `docker-compose` which work as a managing tool.
+
+- Build project infrastructure
+```sh
+./start.sh
+```
+
+- Stop project infrastructure
+```sh
+./stop.sh
+```
+
+- Delete project infrastructure
+```
+./delete.sh
+```
+Do note that all the data will remain in the respective directories even after removing the compose cluster.
