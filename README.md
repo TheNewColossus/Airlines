@@ -25,12 +25,12 @@ Software required to run the project. Install:
 Shell scripts are a wrapper for `docker-compose` which work as a managing tool.
 
 - Build project infrastructure
-```sh
+```
 ./start.sh
 ```
 
 - Stop project infrastructure
-```sh
+```
 ./stop.sh
 ```
 
