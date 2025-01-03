@@ -38,4 +38,4 @@ Shell scripts are wrappers for `docker-compose` which works as a managing tool i
 ```
 ./delete.sh
 ```
-Do note that all the data will remain in the respective directories even after removing the compose cluster.
+Do note that all the data will remain in the respective directories even after removing the compose cluster. This design decision is deliberate as persistent storage is favoured in almost every organizational setting.
