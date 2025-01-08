@@ -1,0 +1,2 @@
+bootstrap_server = broker:29092
+topic_name = Airlines_Data
