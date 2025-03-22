@@ -11,9 +11,8 @@ else
     sudo mkdir -p ${WORK_DIR}/postgres
     # Grafana needs permission to write data to the directory
     sudo chmod -R 777 ${WORK_DIR}/grafana/storage
-    sudo chmod -R 777 ${WORK_DIR}/druid
-    sudo chmod -R 777 ${WORK_DIR}/zookeeper
-    sudo chmod -R 777 ${WORK_DIR}/postgres
+    sudo chmod -R 755 ${WORK_DIR}/druid
+    sudo chmod -R 755 ${WORK_DIR}/postgres
 fi
  
 sudo docker compose up -d
