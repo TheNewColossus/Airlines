@@ -38,6 +38,25 @@ params = {
   'access_key': os.environ["api_key"]
 }
 
+# Transformation function to extract relevant data from the json response
+from collections.abc import MutableMapping
+
+def flatten(dictionary, parent_key='', separator='_'):
+    items = []
+    for key, value in dictionary.items():
+        new_key = parent_key + separator + key if parent_key else key
+        if isinstance(value, MutableMapping):
+            items.extend(flatten(value, new_key, separator=separator).items())
+        else:
+            items.append((new_key, value))
+    return dict(items)
+
+
+# These are the response variables that are to be extracted from the API response.
+variables = ['flight_date','flight_status','departure_airport','departure_timezone','departure_terminal','departure_scheduled',\
+'departure_estimated','departure_delay','arrival_airport','arrival_timezone','arrival_terminal','arrival_scheduled',\
+'arrival_estimated','arrival_delay']
+
 while True:
   # Sending request to the api
   api_result = requests.get('https://api.aviationstack.com/v1/flights', params)
@@ -45,8 +64,13 @@ while True:
 
   # Received the response
   for flight in api_response['data']:
+    
+    #Transforming the data
+    flt_flight = flatten(flight)
+    pay_load = {var: flt_flight[var] if flt_flight[var] is not None else '-' for var in variables}
+    
     # Sending data through the producer
-    producer.send("Airlines_Data",flight)
+    producer.send("Airlines_Data",pay_load)
     # Flushing it after one iteration
     producer.flush()
 
