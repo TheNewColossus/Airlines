@@ -64,7 +64,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - metadata_data:/var/lib/postgresql/data
+      - ${metadata_data_folder}:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_USER=${POSTGRES_USER}
@@ -80,7 +80,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - grafana_storage:/var/lib/grafana
+      - ${grafana_storage_folder}:/var/lib/grafana
     env_file:
       - .env
 
@@ -101,8 +101,8 @@ services:
       - "9092:9092"
       - "9101:9101"
     volumes:
-      - kafka_storage:/var/lib/kafka/data
-      - file_storage:/var/lib/kafka/
+      - ${kafka_storage_folder}:/var/lib/kafka/data
+      - ${file_storage_folder}:/var/lib/kafka/
     environment:
       KAFKA_NODE_ID: 1
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT'
@@ -127,8 +127,8 @@ services:
     image: apache/druid:31.0.1
     container_name: coordinator
     volumes:
-      - druid_shared:/opt/shared
-      - coordinator_var:/opt/druid/var
+      - ${druid_shared_folder}:/opt/shared
+      - ${coordinator_var_folder}:/opt/druid/var
     depends_on:
       - zookeeper
       - postgres
@@ -143,7 +143,7 @@ services:
     image: apache/druid:31.0.1
     container_name: broker
     volumes:
-      - broker_var:/opt/druid/var
+      - ${broker_var_folder}:/opt/druid/var
     depends_on:
       - zookeeper
       - postgres
@@ -159,8 +159,8 @@ services:
     image: apache/druid:31.0.1
     container_name: historical
     volumes:
-      - druid_shared:/opt/shared
-      - historical_var:/opt/druid/var
+      - ${druid_shared_folder}:/opt/shared
+      - ${historical_var_folder}:/opt/druid/var
     depends_on: 
       - zookeeper
       - postgres
@@ -176,8 +176,8 @@ services:
     image: apache/druid:31.0.1
     container_name: middlemanager
     volumes:
-      - druid_shared:/opt/shared
-      - middle_var:/opt/druid/var
+      - ${druid_shared_folder}:/opt/shared
+      - ${middle_var_folder}:/opt/druid/var
     depends_on: 
       - zookeeper
       - postgres
@@ -194,7 +194,7 @@ services:
     image: apache/druid:31.0.1
     container_name: router
     volumes:
-      - router_var:/opt/druid/var
+      - ${router_var_folder}:/opt/druid/var
     depends_on:
       - zookeeper
       - postgres
@@ -212,7 +212,7 @@ services:
     depends_on:
       - kafka
     volumes:
-      - python_storage:/app
+      - ${python_storage_folder}:/app
     working_dir: /app
     ports:
       - '2000:2000'
