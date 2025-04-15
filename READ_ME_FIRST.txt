@@ -8,7 +8,8 @@ Druid-Grafna connection URL = http://broker:8082
 # Kindly wait for a couple of minutes for the docker cluster to be completely active.
 
 # Click on "Load Data" on the Druid titlebar to start ingesting streaming data from kafka
-# Since the api data is in json format, choose json in the ingesting options.
+# Since the api data is in json format, choose json in the ingesting options. Therefrom you are at liberty to transform
+# data as per your wish.
 
 # The default username and password for Grafana is admin, 
 # but you may chose to create your own username and password. 
