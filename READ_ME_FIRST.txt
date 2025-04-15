@@ -1,14 +1,11 @@
 Config:-
 bootstrap_server = broker:29092
 topic_name = Airlines_Data
-Apache Druid URL = http://localhost:8081
+Apache Druid URL = http://localhost:8888
 Grafana Dashboard URL = http://localhost:3000
 Druid-Grafna connection URL = http://broker:8082
 
 # Kindly wait for a couple of minutes for the docker cluster to be completely active.
-
-# Sometimes the druid starts in an overlord mode so click on the yellow exclaimation mark
-# on the dashboard title bar and click on "Start with SQL" option.
 
 # Click on "Load Data" on the Druid titlebar to start ingesting streaming data from kafka
 # Since the api data is in json format, choose json in the ingesting options.
