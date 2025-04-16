@@ -31,7 +31,8 @@ topic_list.append(NewTopic(name="Airlines_Data", num_partitions=1, replication_f
 admin_client.create_topics(new_topics=topic_list, validate_only=False)
 
 # Creating a kafka producer
-producer = KafkaProducer(bootstrap_servers=['broker:29092'],value_serializer=lambda m: json.dumps(m).encode('ascii'))
+producer = KafkaProducer(bootstrap_servers=['broker:29092'],value_serializer=lambda m: json.dumps(m).encode('ascii')\
+,max_request_size=20971520,api_version = (2, 8, 0))
 
 # Got the access key from an api
 params = {
