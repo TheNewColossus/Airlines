@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 export WORK_DIR=$(pwd)
 
 # Conditional statement for setting workdir variable when the program boots for the first time
