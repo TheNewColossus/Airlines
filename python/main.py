@@ -71,7 +71,7 @@ while True:
     
     #Transforming the data
     flt_flight = flatten(flight)
-    pay_load = {var: flt_flight[var] if flt_flight[var] is not None else '-' for var in variables}
+    pay_load = {var: flt_flight[var] if flt_flight[var] is not None else 'N/A' for var in variables}
     
     # Sending data through the producer
     producer.send("Airlines_Data",pay_load)
