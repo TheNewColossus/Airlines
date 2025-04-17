@@ -24,14 +24,18 @@ finally:
 # Waiting for kafka cluster to be up and running
 time.sleep(60)
 
-# Creating a kafka topic
+# Creating a kafka client
 admin_client = KafkaAdminClient(
     bootstrap_servers="broker:29092"
 )
 
-topic_list = []
-topic_list.append(NewTopic(name="Airlines_Data", num_partitions=1, replication_factor=1))
-admin_client.create_topics(new_topics=topic_list, validate_only=False)
+# Creating the topic if it doesn't exist already
+if "Airlines_Data" in admin_client.list_topics():
+  pass
+else:
+  topic_list = []
+  topic_list.append(NewTopic(name="Airlines_Data", num_partitions=1, replication_factor=1))
+  admin_client.create_topics(new_topics=topic_list, validate_only=False)
 
 # Creating a kafka producer
 producer = KafkaProducer(bootstrap_servers=['broker:29092'],value_serializer=lambda m: json.dumps(m).encode('ascii')\
@@ -79,5 +83,5 @@ while True:
     producer.flush()
 
   # Preparing for the next batch
-  time.sleep(50)
+  time.sleep(10)
         
