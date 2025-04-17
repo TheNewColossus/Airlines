@@ -21,6 +21,9 @@ finally:
   from kafka import KafkaProducer
   import requests
 
+# Waiting for kafka cluster to be up and running
+time.sleep(60)
+
 # Creating a kafka topic
 admin_client = KafkaAdminClient(
     bootstrap_servers="broker:29092"
@@ -76,5 +79,5 @@ while True:
     producer.flush()
 
   # Preparing for the next batch
-  time.sleep(100)
+  time.sleep(50)
         
