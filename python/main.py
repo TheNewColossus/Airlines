@@ -83,5 +83,5 @@ while True:
     producer.flush()
 
   # Preparing for the next batch
-  time.sleep(10)
+  time.sleep(30)
         
