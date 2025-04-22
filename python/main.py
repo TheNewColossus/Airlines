@@ -22,7 +22,7 @@ finally:
   import requests
 
 # Waiting for kafka cluster to be up and running
-time.sleep(60)
+time.sleep(100)
 
 # Creating a kafka client
 admin_client = KafkaAdminClient(
